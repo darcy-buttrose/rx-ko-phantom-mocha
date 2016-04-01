@@ -19,6 +19,11 @@ gulp.task('compile', () => {
         .pipe(gulp.dest('./build'));
 });
 
+gulp.task('movestatic', () => {
+    return gulp.src('./src/**/*.html')
+        .pipe(gulp.dest('./build'));
+});
+
 gulp.task('test',['compile'], () => {
     return gulp.src('./build/spec/**/*.spec.js')
         .pipe(mocha({
@@ -26,7 +31,7 @@ gulp.task('test',['compile'], () => {
         }));
 });
 
-gulp.task('package', ['compile'],function() {
+gulp.task('package', ['compile','movestatic'],function() {
     return gulp.src('./build/code/main.js')
         .pipe(webpack({
             devtool: 'sourse-map',

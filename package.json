@@ -19,16 +19,17 @@
     "gulp-babel": "^6.1.2",
     "gulp-mocha": "^2.2.0",
     "gulp-typescript": "^2.12.1",
+    "raw-loader": "^0.5.1",
     "sinon": "^1.17.3",
+    "text-loader": "0.0.1",
     "typescript": "^1.8.9",
     "webpack-stream": "^3.1.0"
   },
   "dependencies": {
+    "@reactivex/rxjs": "^5.0.0-beta.4",
     "babel-polyfill": "^6.7.4",
-    "cycle-react": "^4.0.0",
-    "keymirror": "^0.1.1",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
-    "rx": "^4.1.0"
+    "immutable": "^3.7.6",
+    "jquery": "^2.2.2",
+    "knockout": "^3.4.0"
   }
 }
