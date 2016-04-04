@@ -4,15 +4,30 @@
 /// <reference path="../../../../../typings/tsd.d.ts" />
 
 import * as ko from "knockout";
-import componentTemplate from "text!./home-page.tmpl.html"
+import componentTemplate from "text!./home-page.tmpl.html";
+import {publish} from "../../../Intents/Intent";
+import {Keys} from "../../../Intents/Keys";
+import {Map} from "immutable";
+import state$ from "../../../Models/Model";
 
 export class HomePageViewModel {
     title: string;
-    name: any;
+    name: KnockoutObservable<string>;
+    display : KnockoutObservable<string>;
 
     constructor () {
         this.title = "Hello";
         this.name = ko.observable('Darcy');
+        state$.get('name').subscribe(name => {
+           this.display(name);
+        });
+    }
+
+    public publishName() {
+        publish({
+            key: Keys.ChangeName,
+            payload: Map({name})
+        })
     }
 
     static register () {
