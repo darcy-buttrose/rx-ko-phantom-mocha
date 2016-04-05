@@ -27,15 +27,4 @@ function applyAction(state:Map<string,string>, action:IAction):Map<string,string
     return state;
 }
 
-function get(pattern:string) {
-    var keys = pattern.split('.');
-
-    return state$.select(state => {
-
-        return keys.reduce((state, key) => state != null ? state.get(key) : null, state)
-    });
-}
-
-state$.get = get;
-
 export default state$;

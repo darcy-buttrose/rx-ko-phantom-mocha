@@ -18,8 +18,8 @@ export class HomePageViewModel {
     constructor () {
         this.title = "Hello";
         this.name = ko.observable('Darcy');
-        state$.get('name').subscribe(name => {
-           this.display(name);
+        state$.subscribe(state => {
+           this.display(state.get('name'));
         });
     }
 
