@@ -9,7 +9,7 @@ import {Map} from "immutable";
 
 var subject: Subject<IAction> = new Subject<IAction>();
 function publish(action: IAction) : void {
-    this.subject.next(action);
+    subject.next(action);
 }
 
 export {

@@ -18,6 +18,8 @@ export class HomePageViewModel {
     constructor () {
         this.title = "Hello";
         this.name = ko.observable('Darcy');
+        this.display = ko.observable(this.name());
+        //here
         state$.subscribe(state => {
            this.display(state.get('name'));
         });
@@ -26,7 +28,7 @@ export class HomePageViewModel {
     public publishName() {
         publish({
             key: Keys.ChangeName,
-            payload: Map({name})
+            payload: Map({name:this.name()})
         })
     }
 

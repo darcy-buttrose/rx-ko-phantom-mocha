@@ -32,7 +32,7 @@ gulp.task('test',['compile'], () => {
 });
 
 gulp.task('package', ['compile','movestatic'],function() {
-    return gulp.src('./build/code/main.js')
+    return gulp.src('./build/main.js')
         .pipe(webpack({
             devtool: 'sourse-map',
             output: {

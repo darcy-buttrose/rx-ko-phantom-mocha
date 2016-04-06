@@ -18,7 +18,7 @@ function applyAction(state:Map<string,string>, action:IAction):Map<string,string
     switch (action.key) {
         case Keys.ChangeName :
         {
-            var name:string = state.get('name');
+            var name:string = action.payload.get('name');
             state = state.merge({name});
             break;
         }
