@@ -6,7 +6,7 @@ import webpack from 'webpack-stream';
 import 'babel-polyfill';
 
 gulp.task('compile', () => {
-    return gulp.src(['./src/**/*.ts*','!./src/**/*.spec.ts*'])
+    return gulp.src(['./src/**/*.ts*'])
         .pipe(typescript(typescript.createProject('./tsconfig.json')))
         .pipe(babel({
             plugins: [

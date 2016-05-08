@@ -1,7 +1,7 @@
 /**
  * Created by Darcy on 3/04/2016.
  */
-/// <reference path="../../typings/tsd.d.ts"/>
+/// <reference path="../../typings/browser.d.ts"/>
 
 import {Keys} from "../Intents/Keys";
 import {IAction} from "../Intents/IAction"
